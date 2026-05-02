@@ -8,13 +8,15 @@ import { RenderHome } from "./ui/chart.js";
  const tocken = localStorage.getItem('jwt')
    const container = document.getElementById('container')
    container.innerHTML =''
-   const cuurentpath = window.location 
+   const cuurentpath = window.location.pathname
   if (tocken) {
 
     window.history.replaceState({},"","/profile")
     console.log("User is already logged in! Bypassing login...");
     RenderHome();
-  }else  {
+
+
+  }else  { 
     window.history.replaceState({},"","/login")
     console.log("No token found. Showing login page...");
     Renderlogin()
@@ -25,4 +27,5 @@ document.addEventListener('DOMContentLoaded', ()=> {
 Inapp();
 
 })
+
 
