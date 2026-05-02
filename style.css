@@ -1,0 +1,119 @@
+/* Reset الأساسي */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F0F8FF; /* لون أزرق جليدي فاتح جداً */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* الحاوية الرئيسية (Container) */
+#container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* باش مايلصقش في الجناب في التلفون */
+}
+
+/* صندوق تسجيل الدخول */
+.login-box {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-top: 5px solid #00BFFF; /* خط أزرق من الفوق */
+    
+    /* Animation بسيطة للظهور */
+    animation: fadeIn 0.5s ease-out;
+}
+
+.login-box h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.pipip {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* الحقول (Inputs) */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #D6E4F0;
+    border-radius: 8px;
+    background-color: #F9FCFF;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* ملي كتكليكي وسط الحقل */
+.input-group input:focus {
+    border-color: #00BFFF;
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
+}
+
+/* زر الدخول */
+#login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #00BFFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#login-btn:hover {
+    background-color: #008CBA;
+}
+
+/* ملي كتورك على الزر كيهبط شوية */
+#login-btn:active {
+    transform: scale(0.98); 
+}
+
+/* رسالة الخطأ */
+.error-text{
+    color: #FF4C4C;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* كود الأنيميشن */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
