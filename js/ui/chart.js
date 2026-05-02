@@ -1,12 +1,13 @@
 import { Logout } from './logout.js'
-
-export function RenderHome() {
+ import { fetchProfileData } from '../api/auth.js'
+export  async function RenderHome() {
     const container = document.getElementById('container')
-    const   htmlbuton = `<button id ="logout">logout</button>`
+   const result = await fetchProfileData()
+   console.log(result)
+    const htmlbuton = `<button id ="logout">logout</button>`
     container.innerText = " bienvenue frtlan"
 
-    container.innerHTML +=  htmlbuton
+    container.innerHTML += htmlbuton
     Logout()
 }
-
 

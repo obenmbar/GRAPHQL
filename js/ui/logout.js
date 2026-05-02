@@ -2,6 +2,6 @@
  const btnlogout =  document.getElementById('logout') 
  btnlogout.addEventListener('click',()=> {
     localStorage.removeItem('jwt')
-    document.location.reload()
+     window.location.href = "/"   
  })
  }
