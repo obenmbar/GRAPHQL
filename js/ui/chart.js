@@ -19,7 +19,8 @@ export async function RenderHome() {
         try {
             const data = await FetchProfileData()
             const user = data.user[0]
-            const totalXpRaw = data.total_xp.aggregate.sum.amount
+            const totalXpRaw =  data.total_xp.aggregate.sum.amount
+
             let formattedXp = Math.round(totalXpRaw / 1000) + "KB"
             if (totalXpRaw / 1000 > 1000) {
                 formattedXp = Math.round(totalXpRaw / 1000 / 1000) + "MB"
@@ -60,7 +61,7 @@ export async function RenderHome() {
                         <div class="stat-pill"></div>
                         <div class="stat-info">
                             <h3 class="stat-title">Audit Ratio</h3>
-                            <h2 class="stat-value">${user.auditRatio.toFixed(2)}</h2>
+                            <h2 class="stat-value">${user.auditRatio.toFixed(1)}</h2>
                         </div>
                     </div>
                 </div>
