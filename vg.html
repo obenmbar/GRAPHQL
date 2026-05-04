@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg viewBox="0 0 500 300" width="500" height="300" style="background: white; border: 1px solid #ccc;">
+    
+    <!-- 1. هادا هو الخط المتصل ديالنا -->
+    <polyline points="50,250 150,150 250,200 350,100" fill="none" stroke="#00f2fe" stroke-width="3" />
+
+    <!-- 2. هادي المجموعة الأولى (المشروع الأول) -->
+    <g class="data-point">
+        <!-- الدائرة الصغيرة لي غتبان -->
+        <circle cx="150" cy="150" r="6" fill="#4facfe" stroke="white" stroke-width="2" />
+        
+        <!-- الكتابة لي غتكون مخبية (Tooltip) -->
+        <text x="150" y="130" text-anchor="middle" class="tooltip">Project: Go-lang (50XP)</text>
+    </g>
+
+    <!-- 3. هادي المجموعة الثانية (المشروع الثاني) -->
+    <g class="data-point">
+        <!-- الدائرة الصغيرة لي غتبان -->
+        <circle cx="250" cy="200" r="6" fill="#4facfe" stroke="white" stroke-width="2" />
+        
+        <!-- الكتابة لي غتكون مخبية (Tooltip) -->
+        <text x="250" y="180" text-anchor="middle" class="tooltip">Project: GraphQL (30XP)</text>
+    </g>
+
+    <style>
+        /* ستايل باش التيكست يكون زوين */
+        .tooltip {
+            font-size: 12px;
+            fill: #333;
+            font-weight: bold;
+            opacity: 0; /* هنا كنخبيو التيكست في الأول */
+            transition: opacity 0.3s ease; /* باش يبان بشوية ماشي يخبط */
+        }
+
+        /* قالب الـ Hover: ملي نقيسو المجموعة كاملة <g>، بين ليا التيكست لي لداخل */
+        .data-point:hover .tooltip {
+            opacity: 1; /* هنا كنرجعو التيكست يبان */
+        }
+
+        /* ستايل اختياري باش الدائرة تكبر شوية فاش نقيسوها */
+        .data-point:hover circle {
+            r: 8; 
+            cursor: pointer;
+        }
+    </style>
+</svg>
+</body>
+</html>
