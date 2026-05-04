@@ -7,13 +7,13 @@ import { RenderHome } from "./ui/chart.js";
    container.innerHTML =''
   if (tocken) {
 
-    window.history.replaceState({},"","/profile")
+  
     console.log("User is already logged in! Bypassing login...");
     RenderHome();
 
 
   }else  { 
-    window.history.replaceState({},"","/login")
+  
     console.log("No token found. Showing login page...");
     Renderlogin()
   }

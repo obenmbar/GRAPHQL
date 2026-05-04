@@ -79,7 +79,7 @@ export function Loginlogique() {
                 messageerror.innerText = `Success! Welcome ${usernamevalue}`
 
                 setTimeout(() => {
-                    window.history.replaceState({},'',"/profile")
+                   
                     RenderHome()
                 }, 1000);
 
