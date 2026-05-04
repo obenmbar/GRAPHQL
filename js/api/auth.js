@@ -1,6 +1,6 @@
 import { Query } from "./query.js"
-
-export async function fetchProfileData() {
+import  {Renderpopuperrror} from '../utils/helpers.js'
+export async function FetchProfileData() {
     const token = localStorage.getItem('jwt')
     try {
         const response = await fetch('https://learn.zone01oujda.ma/api/graphql-engine/v1/graphql', {
@@ -9,7 +9,7 @@ export async function fetchProfileData() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({ query : Query })
+            body: JSON.stringify({ query: Query })
         })
         if (!response.ok) {
             throw new Error('HTTP Error: ' + response.status)
@@ -21,10 +21,8 @@ export async function fetchProfileData() {
             throw new Error("Failed to fetch data from GraphQL")
         }
         return result.data
-    } catch(error) {
-         console.error(error.message)
-   alert("Session expired or network error. Please login again.")
-   localStorage.removeItem('jwt')
-   window.location.href = "/"
+    } catch (error) {
+        console.error(error.message)
+        Renderpopuperrror()
     }
 }
