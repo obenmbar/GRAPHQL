@@ -1,5 +1,8 @@
 import { Query } from "./query.js"
-import  {Renderpopuperrror} from '../utils/helpers.js'
+import  {RenderPopupError} from '../utils/helpers.js'
+
+// Fetches the user's profile data from the GraphQL API using the stored JWT token.
+// Triggers an error popup if the network request fails or the token is invalid/expired.
 export async function FetchProfileData() {
     const token = localStorage.getItem('jwt')
     try {
@@ -23,6 +26,6 @@ export async function FetchProfileData() {
         return result.data
     } catch (error) {
         console.error(error.message)
-        Renderpopuperrror()
+        RenderPopupError()
     }
 }

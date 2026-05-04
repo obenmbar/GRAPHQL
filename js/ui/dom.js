@@ -1,4 +1,8 @@
 import { RenderHome } from "./chart.js"
+/**
+ * Injects the login interface into the DOM and initializes the authentication logic.
+ * This acts as the entry point for unauthenticated users.
+ */
 export function Renderlogin() {
     const conatainer = document.getElementById('container')
 
@@ -23,13 +27,16 @@ export function Renderlogin() {
     
     Loginlogique()
 }
-
+/**
+ * Manages the authentication workflow, including credential encoding (Base64),
+ * API communication, JWT storage, and handling keyboard "Enter" events for better UX.
+ */
 export function Loginlogique() {
     const username = document.getElementById('username')
     const password = document.getElementById('password')
     const messageerror = document.getElementById('error-message')
     const inputbutton = document.getElementById('login-btn')
-
+     
     inputbutton.addEventListener('click', async (event) => {
         const usernamevalue = username.value
         const passwordvalue = password.value
@@ -94,5 +101,13 @@ export function Loginlogique() {
 
 
     })
+
+    document.addEventListener("keydown",(event)=> {
+            if (event.key === 'Enter') {
+
+                event.preventDefault()
+                inputbutton.click()
+            }
+        })
 
 }

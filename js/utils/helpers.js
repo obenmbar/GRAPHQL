@@ -1,4 +1,8 @@
-export function Renderpopuperrror(){
+/**
+ * Renders a full-screen modal to notify the user of session expiration or connectivity issues.
+ * Provides a direct action to clear invalid credentials and return to the login interface.
+ */
+export function RenderPopupError(){
          const container = document.getElementById('container')
         
      container.innerHTML = `

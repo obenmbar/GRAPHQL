@@ -1,3 +1,7 @@
+/**
+ * Generates an SVG-based Pie Chart for audit success/failure ratios.
+ * Uses the circumference property to draw a circular progress bar (donut style).
+ */
 export function CreateAuditPieChart(passCount, failCount) {
   
     const total = passCount + failCount;
@@ -41,7 +45,10 @@ export function CreateAuditPieChart(passCount, failCount) {
         </svg>
     `;
 }
-
+/**
+ * Transforms raw GraphQL transactions into a structured format for charting.
+ * Calculates cumulative XP totals and parses timestamps and project names.
+ */
 export function ProcessXpData(transactions) {
     let cumulativeXp = 0;
     let cleanData = [];
@@ -70,6 +77,10 @@ export function ProcessXpData(transactions) {
 
     return cleanData;
 }
+/**
+ * Renders a responsive SVG line chart representing the user's XP progression over time.
+ * Includes data scaling and interactive tooltips for each completed project.
+ */
 export function CreateXpLineChart(data) {
     if (!data || data.length === 0) return "<p>No XP Data</p>";
 
@@ -90,7 +101,7 @@ export function CreateXpLineChart(data) {
 
     data.forEach((item, index) => {
       
-        const xPercentage = index / (data.length - 1);
+        const xPercentage = data.length > 1 ? index / (data.length - 1) : 0.5;
       
         const x = (xPercentage * graphWidth) + padding     
 

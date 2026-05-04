@@ -1,8 +1,11 @@
 import { Logout } from './logout.js'
 import { FetchProfileData } from '../api/auth.js'
 import { CreateAuditPieChart, ProcessXpData, CreateXpLineChart } from './svg.js';
-import { Renderpopuperrror } from '../utils/helpers.js';
-
+import { RenderPopupError } from '../utils/helpers.js';
+/**
+ * Orchestrates the dashboard rendering by fetching user data and populating the UI 
+ * with profile information, real-time statistics, and custom SVG charts.
+ */
 export async function RenderHome() {
     const container = document.getElementById('container')
 
@@ -94,7 +97,7 @@ export async function RenderHome() {
             Logout()
         } catch (error) {
             console.error(error.message)
-            Renderpopuperrror()
+            RenderPopupError()
         }
     }, 100);
 

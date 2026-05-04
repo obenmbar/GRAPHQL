@@ -1,3 +1,7 @@
+/**
+ * GraphQL query to retrieve comprehensive user profile data, including identification,
+ * cumulative XP from modules, chronological XP transactions, and skill breakdown.
+ */
 export const Query = `
 query GetMyProfile {
   user {
