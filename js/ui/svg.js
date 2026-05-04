@@ -33,7 +33,7 @@ export function CreateAuditPieChart(passCount, failCount) {
                 stroke="#2ed573" 
                 stroke-width="30.5" 
                 stroke-dasharray="${passStrokeLength} ${circumference}" 
-                stroke-linecap="round"
+                
             />
             
             <text x="125" y="115" text-anchor="middle" font-size="28" font-weight="bold" fill="#333" transform="rotate(90 125 125)">
