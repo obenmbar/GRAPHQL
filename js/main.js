@@ -1,14 +1,10 @@
 import { Renderlogin } from "./ui/dom.js";
 import { RenderHome } from "./ui/chart.js";
 
-
-
-
  function Inapp(){
  const tocken = localStorage.getItem('jwt')
    const container = document.getElementById('container')
    container.innerHTML =''
-   const cuurentpath = window.location.pathname
   if (tocken) {
 
     window.history.replaceState({},"","/profile")
@@ -25,7 +21,5 @@ import { RenderHome } from "./ui/chart.js";
  
 document.addEventListener('DOMContentLoaded', ()=> {
 Inapp();
-
 })
-
 
