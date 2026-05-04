@@ -87,7 +87,6 @@ export function Loginlogique() {
                 }, 5000)
                 console.error("Error Details:", error.message)
 
-
             } finally {
                 inputbutton.innerText = "Sign In"
             }
